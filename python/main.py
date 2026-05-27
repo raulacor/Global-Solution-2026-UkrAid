@@ -1,6 +1,6 @@
 #Imports:
 from pyfiglet import figlet_format
-from risk_model import troop_risk, air_raid_risk, missile_strike, total_risk
+from risk_model import troop_risk, air_raid_risk, missile_strike, total_risk, haversine
 
 
 
