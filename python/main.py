@@ -1,6 +1,14 @@
 #Imports:
 from pyfiglet import figlet_format
 from risk_model import troop_risk, air_raid_risk, missile_strike, total_risk, haversine
+from api import get_token, get_conflicts_events, get_country
+from dotenv import load_dotenv
+import os
+
+#ACLED API Requests:
+load_dotenv()
+EMAIL = os.getenv("ACLED_EMAIL")
+PASSWORD = os.getenv("ACLED_PASSWORD")
 
 
 
@@ -19,8 +27,14 @@ def pause():
 
 #Main func:
 def main():
+     #Variables:
      usr_lat = None
      usr_lon = None
+     country = None
+
+     #APIs:
+     token = get_token(os.getenv("ACLED_EMAIL"), os.getenv("ACLED_PASSWORD")) 
+
 
      separador()
      print(figlet_format("OrbitGuard"))
@@ -56,35 +70,39 @@ def main():
                          if usr_lat is None or usr_lon is None: 
                               usr_lat = float(input("Insert your latitue: E.g. -23.5505 | "))
                               usr_lon = float(input("Insert your longitude: E.g. 74.0060 | "))
-                         else:
-                              print("case 2")
-                              break
+                              country = get_country(usr_lat, usr_lon)
                     except ValueError:
                          println("Invalid input - please enter a valid coordinate. E.g. -23.5505")
                          pause()
+
+                    get_conflicts_events(token, country, limit=5)
 
 
                case "3":
+                    
                     try:
-                         if usr_lat is None or usr_lon is None: 
-                              usr_lat = float(input("Insert your latitue: E.g. -23.5505 | "))
-                              usr_lon = float(input("Insert your longitude: E.g. 74.0060 | "))
-                         else:
-                              print("case 3")
-                              break
-                    except ValueError:
-                         println("Invalid input - please enter a valid coordinate. E.g. -23.5505")
+                         
+                         print("case 3")
+
+                    except:
+                         println("Could not reach alert service. Check your connection.")
                          pause()
 
 
+
                case "4":
+                    dst_lat = None
+                    dst_lon = None
+
                     try:
                          if usr_lat is None or usr_lon is None: 
                               usr_lat = float(input("Insert your latitue: E.g. -23.5505 | "))
                               usr_lon = float(input("Insert your longitude: E.g. 74.0060 | "))
-                         else:
-                              print("case 4")
-                              break
+                         
+                         dst_lat = float(input("Insert destination latitue: E.g.  50.4501 | "))
+                         dst_lon = float(input("Insert destination's longitude: E.g.  30.5234 | "))
+                         
+                    
                     except ValueError:
                          println("Invalid input - please enter a valid coordinate. E.g. -23.5505")
                          pause()
