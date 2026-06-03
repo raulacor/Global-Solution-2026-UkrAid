@@ -21,10 +21,6 @@ def haversine(lat1, lon1, lat2, lon2):
 def troop_risk(d, k = K_TROOPS):
     return math.exp(-k * d) / (d ** 2)
 
-
-def air_raid_risk(d, k = K_AIR_RAID):
-    return math.exp(-k* d) / (d ** 2)
-
 def missile_strike(d, k = K_MISSILE_MAX):
     return math.exp(-k* d) / (d ** 2)
 
@@ -33,9 +29,9 @@ def total_risk(r_missile, r_air, r_troops):
 
 def risk_label(risk):
     if risk > 0.001:
-        return f"[ALERT!] Critical risk of: {risk:.4f}"
+        return f"[⚠ ALERT ⚠] Critical risk of: {risk:.4f}"
     if risk > 0.0001:
-        return f"[ALERT!] High risk of :{risk:.4f}"
+        return f"[⚠ ALERT] High risk of :{risk:.4f}"
     if risk > 0.00001:
         return f"Moderate risk of :{risk:.4f}"
     else:

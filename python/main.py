@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 import os
 
 from api import get_token, get_conflicts_events, get_country, get_nearby_resources, get_facility_name, get_air_alerts
-from risk_model import troop_risk, air_raid_risk, missile_strike, total_risk, haversine, risk_label
+from risk_model import troop_risk, missile_strike, haversine, risk_label
 from support_functions import println, pause, separador, separador_up, separador_down, clear
 
 #ACLED API Requests:
@@ -56,7 +56,7 @@ def main():
                     separador_up()
                     print("""   ABOUT UkrAid
                           
-   OrbitGuard is a cli application that aims to 
+   UkrAid is a cli application that aims to 
    centralize all OSINT available data inside the 
    territory of Ukraine in order to help civilians 
    to find resources, safe zones and to alert of 
