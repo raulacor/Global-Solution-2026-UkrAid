@@ -4,7 +4,6 @@ import math
 #K_ Consts:
 # Threat attenuation constants
 K_TROOPS = 0.001      # persistent, mobile threat
-K_AIR_RAID = 0.003    # wide area, temporary  
 K_MISSILE_MAX = 0.005 # highest risk per distance unit
 
 #Functions:
@@ -21,11 +20,10 @@ def haversine(lat1, lon1, lat2, lon2):
 def troop_risk(d, k = K_TROOPS):
     return math.exp(-k * d) / (d ** 2)
 
+
 def missile_strike(d, k = K_MISSILE_MAX):
     return math.exp(-k* d) / (d ** 2)
 
-def total_risk(r_missile, r_air, r_troops):
-    return max(r_missile, r_air, r_troops)
 
 def risk_label(risk):
     if risk > 0.001:
