@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UkrAid</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav role="navigation" aria-label="Main navigation">
@@ -16,10 +24,84 @@
         <li><a href="#features">Features</a></li>
         <li><a href="#how-it-works">Como Funciona</a></li>
       </ul>
-
       <div class="cta">
-        <a href="#contact-us" class="nav-cta">Contact</a>
+        <a href="#contact-us" class="nav-cta">Contato</a>
       </div>
     </nav>
+    <section id="hero">
+      <h1 class="hero-logo">
+        <span>Ukr</span><span class="nav-aid">Aid</span>
+      </h1>
+      <p class="hero-tagline">Segurança com Informação</p>
+      <a href="#about" class="hero-scroll"
+        ><i class="fa-solid fa-chevron-down"></i
+      ></a>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-left">
+            <span class="section-label">Sobre</span>
+            <h2 class="section-title">Inteligência de<br />Segurança Aberta</h2>
+            <p>
+              <strong>UkrAid</strong> é uma ferramenta de inteligência de linha
+              de comando projetada para auxiliar civis em zonas de conflito
+              ativo, centralizando dados críticos provindas fontes abertas em
+              uma interface acessível.
+            </p>
+            <p>
+              Construída sobre a premissa de que
+              <strong>informação salva vidas</strong>, a UkrAid agrega análises
+              de imagens de satélite ao vivo, dados de eventos de conflito e
+              coordenadas de recursos humanitários para que qualquer pessoa
+              possa avaliar riscos e localizar ajuda.
+            </p>
+            <p>
+              A plataforma consulta <strong>quatro APIs em tempo real</strong>:
+              ACLED para eventos de conflito geolocalizados, UkraineAlarm para
+              monitoramento de alertas aéreos, OpenStreetMap para infraestrutura
+              de refugiados e serviços de geocodificação — tudo sem exigir
+              contas ou credenciais para funcionalidades principais.
+            </p>
+          </div>
+          <div class="about-right">
+            <article class="stat-card">
+              <div class="stat-num">4</div>
+              <div class="stat-info">
+                <h4>APIs Integradas</h4>
+                <p>
+                  ACLED, UkraineAlarm, OpenStreetMap, geocodificação Nominatim
+                </p>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-num" style="font-size: 1.4rem; line-height: 1.3">
+                Ao Vivo
+              </div>
+              <div class="stat-info">
+                <h4>Dados de Conflito em Tempo Real</h4>
+                <p>
+                  Eventos OSINT via satélite atualizados continuamente de zonas
+                  de conflito ativas
+                </p>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-num" style="font-size: 1.1rem; line-height: 1.4">
+                Zero
+              </div>
+              <div class="stat-info">
+                <h4>Zero Autenticação Necessária</h4>
+                <p>
+                  Acesso aberto por design — sem cadastro para acessar dados de
+                  risco e recursos
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
